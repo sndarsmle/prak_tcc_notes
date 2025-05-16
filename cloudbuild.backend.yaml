@@ -1,0 +1,43 @@
+steps:
+  # 1. Build Docker image for the backend
+  - name: "gcr.io/cloud-builders/docker"
+    args: [
+      "build",
+      "--cache-from",
+      "gcr.io/$PROJECT_ID/notes-backend-ageng",
+      "-t",
+      "gcr.io/$PROJECT_ID/notes-backend-ageng:${SHORT_SHA}",
+      "."
+    ]
+    dir: "notes_be"
+
+  # 2. Push Docker image to Google Container Registry
+  - name: "gcr.io/cloud-builders/docker"
+    args: [
+      "push",
+      "gcr.io/$PROJECT_ID/notes-backend-ageng:${SHORT_SHA}"
+    ]
+
+  # 3. Deploy the Docker image to Google Cloud Run
+  - name: "gcr.io/cloud-builders/gcloud"
+    entrypoint: gcloud 
+    args: [
+      "run",
+      "deploy",
+      "notes-backend-ageng",
+      "--image",
+      "gcr.io/$PROJECT_ID/notes-backend-ageng:${SHORT_SHA}",
+      "--timeout",
+      "1000s",
+      "--port",
+      "5000",
+      "--region",
+      "us-central1",
+      "--allow-unauthenticated",
+      "--set-env-vars",
+      "ACCESS_TOKEN_SECRET=${_ACCESS_TOKEN_SECRET},REFRESH_TOKEN_SECRET=${_REFRESH_TOKEN_SECRET},DB_HOST=${_DB_HOST},DB_NAME=${_DB_NAME},DB_PASSWORD=${_DB_PASSWORD},DB_USERNAME=${_DB_USERNAME}"
+    ]
+  
+# log hanya akan disimpan di Google Cloud Logging
+options: 
+  logging: CLOUD_LOGGING_ONLY

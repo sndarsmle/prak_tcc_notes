@@ -1,0 +1,65 @@
+###  Register User
+POST http://localhost:5000/register
+Content-Type: application/json
+
+{
+  "name": "John Doe 2",
+  "email": "john.doe2@gmail.com",
+  "password": "password123",
+  "confirm_password": "password123"
+}
+
+### Login User
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+  "email": "john.doe2@gmail.com",
+  "password": "password123"
+}
+
+### Refresh Token
+POST http://localhost:5000/refresh-token
+Content-Type: application/json
+
+{
+  "refreshToken": "your-refresh-token"
+}
+
+### Get All Notes
+GET http://localhost:5000/notes
+Authorization: Bearer your-access-token
+
+### Get Single Note by ID
+GET http://localhost:5000/notes/1
+Authorization: Bearer your-access-token
+
+### Create Note
+POST http://localhost:5000/add-notes
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibmFtZSI6IkpvaG4gRG9lIDIiLCJlbWFpbCI6ImpvaG4uZG9lMkBnbWFpbC5jb20iLCJjcmVhdGVkQXQiOiIyMDI1LTA1LTEzVDAyOjI0OjIwLjAwMFoiLCJ1cGRhdGVkQXQiOiIyMDI1LTA1LTEzVDAyOjI1OjM2LjAwMFoiLCJpYXQiOjE3NDcxMDU2MTMsImV4cCI6MTc0NzEwNTY0M30._fzIc-N7tltYla8MIkmaqQCnD_DqoR4uUtc2OcWc-Uo
+
+{
+  "title": "My First Note",
+  "content": "This is the content of my first note."
+}
+
+
+### Update Note
+PUT http://localhost:5000/edit-notes/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibmFtZSI6IkpvaG4gRG9lIDIiLCJlbWFpbCI6ImpvaG4uZG9lMkBnbWFpbC5jb20iLCJjcmVhdGVkQXQiOiIyMDI1LTA1LTEzVDAyOjI0OjIwLjAwMFoiLCJ1cGRhdGVkQXQiOiIyMDI1LTA1LTEzVDAzOjA2OjUzLjAwMFoiLCJpYXQiOjE3NDcxMDU3NDEsImV4cCI6MTc0NzEwNTc3MX0.7Mt6lkDj1C7glgH9SGavSK3FokG_zIKCAv_7NxIDz-c
+Content-Type: application/json
+
+{
+  "title": "Updated Note Title",
+  "content": "This is the updated content."
+}
+
+### Delete Note
+DELETE http://localhost:5000/delete-notes/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibmFtZSI6IkpvaG4gRG9lIDIiLCJlbWFpbCI6ImpvaG4uZG9lMkBnbWFpbC5jb20iLCJjcmVhdGVkQXQiOiIyMDI1LTA1LTEzVDAyOjI0OjIwLjAwMFoiLCJ1cGRhdGVkQXQiOiIyMDI1LTA1LTEzVDAzOjA5OjAxLjAwMFoiLCJpYXQiOjE3NDcxMDYwOTAsImV4cCI6MTc0NzEwNjEyMH0.5tP0zxApvJRwXD3da2bxEYpG11Rj_xb5kl09_CFqYvk
+
+### Logout User
+DELETE http://localhost:5000/logout
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibmFtZSI6IkpvaG4gRG9lIDIiLCJlbWFpbCI6ImpvaG4uZG9lMkBnbWFpbC5jb20iLCJjcmVhdGVkQXQiOiIyMDI1LTA1LTEzVDAyOjI0OjIwLjAwMFoiLCJ1cGRhdGVkQXQiOiIyMDI1LTA1LTEzVDAzOjIxOjA4LjAwMFoiLCJpYXQiOjE3NDcxMDY5NDEsImV4cCI6MTc0NzE5MzM0MX0.z6AsR5rRZ4CYb_wgXcFocrtK00ZlIn9fa2sv7uKtMLU
+Content-Type: application/json

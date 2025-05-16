@@ -1,0 +1,112 @@
+@import "bulma/css/bulma.min.css";
+
+/* Background dasar aplikasi */
+body {
+  background-color: white !important;
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+}
+
+/* Kontainer layout */
+.container {
+  width: 100% !important;
+  max-width: 100% !important;
+  padding: 20px;
+}
+
+/* Card-style modern */
+.card {
+  background-color: #fdfdfd !important;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* Header teks pada card */
+.card-header-title {
+  font-weight: 600;
+  color: #222 !important;
+}
+
+/* Konten dalam catatan */
+.card-content {
+  font-size: 14px;
+  color: #333 !important;
+}
+
+/* Subtitle */
+.has-text-grey {
+  font-size: 12px;
+  color: #555 !important;
+}
+
+/* Tombol */
+.button {
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.button:hover {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Judul halaman */
+.title {
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.subtitle {
+  font-style: italic;
+  font-size: 13px;
+  color: #777 !important;
+}
+
+/* Input dan textarea */
+input.input,
+textarea.textarea {
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+/* Form textarea khusus */
+textarea.textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Form Authentication */
+.auth-box {
+  background: #000000;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgb(255, 255, 255);
+  padding: 30px 32px;
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.auth-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.auth-subtext {
+  text-align: center;
+  font-size: 13px;
+  margin-top: 15px;
+  color: #666;
+}
+
+.auth-subtext a {
+  color: #3273dc;
+  font-weight: 500;
+  text-decoration: underline;
+}
