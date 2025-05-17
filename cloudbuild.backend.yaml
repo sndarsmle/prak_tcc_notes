@@ -9,7 +9,7 @@ steps:
       "gcr.io/$PROJECT_ID/notes-backend-ageng:${SHORT_SHA}",
       "."
     ]
-    dir: "notes_be"
+    dir: "backend"
 
   # 2. Push Docker image to Google Container Registry
   - name: "gcr.io/cloud-builders/docker"
