@@ -13,8 +13,8 @@ const port = process.env.PORT || 5000;
 
 const corsOptions = {
     origin: [
-      "http://localhost:3000",
-
+      "https://notes-frontend-ageng-dot-a-08-450504.uc.r.appspot.com",
+      "http://localhost:3000"
     ],
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
